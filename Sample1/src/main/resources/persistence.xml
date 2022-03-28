@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence                  
+                                http://java.sun.com/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="psfirst">
+ 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>com.example.jpa.first.entity.Student</class>
+        <properties>
+           <!-- This property provides the type of DB so that appropriate SQL statements 
+                can be generated -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            
+            <!-- The below properties are the connection properties like URL, User, password, Driver class -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/jpa"/>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="root123"/>
+                      
+            <!-- This property creates the tables corresponding to the entity definitions 
+                 if not found in the schema -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+  </persistence-unit>
+</persistence>
